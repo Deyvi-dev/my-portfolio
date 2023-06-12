@@ -30,7 +30,6 @@ const targetCameraPosition = { x: 0, y: 0, z: 0 }
 let animationInProgress = false
 
 onMounted(() => {
-  // Configuração do Three.js
   renderer = new THREE.WebGLRenderer({ canvas: canvas.value! })
   renderer.setSize(window.innerWidth, window.innerHeight)
 
@@ -72,7 +71,6 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  // Limpar recursos ao desmontar o componente
   renderer.dispose()
   window.removeEventListener("resize", handleResize)
   window.removeEventListener("mousemove", handleMouseMove)
@@ -131,23 +129,12 @@ function iniciarAnimacao() {
     targetCameraPosition.y = Math.random() * 10 - 5
     targetCameraPosition.z = Math.random() * 10 - 5
     setTimeout(() => {
-      router.push("/projects") // Redireciona para a rota /projects
+      router.push("/projects")
       animationInProgress = false
     }, 2500)
   }
 }
 
-function verProjetos() {
-  // Lógica para redirecionar para a página de projetos
-  // Implemente sua própria lógica de roteamento aqui
-  console.log("Redirecionando para a página de projetos...")
-}
-
-function verSobre() {
-  // Lógica para redirecionar para a página Sobre
-  // Implemente sua própria lógica de roteamento aqui
-  console.log("Redirecionando para a página Sobre...")
-}
 </script>
 
 <style scoped>
